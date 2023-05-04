@@ -30,13 +30,13 @@ public class LoanRepository {
     }
 
     public List<Loan> getLoanByCustomerId(int id) {
-        List<Loan> loans = new ArrayList<>();
+        List<Loan> loansByCustomerId = new ArrayList<>();
         for (Loan loan : loans) {
             if (loan.getCustomer().getId() == id) {
-                loans.add(loan);
+                loansByCustomerId.add(loan);
             }
         }
-        return loans;
+        return loansByCustomerId;
     }
 
     public List<Loan> getAllLoans() {

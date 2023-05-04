@@ -1,15 +1,25 @@
 package org.aspireapp;
 
 import java.time.LocalDate;
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 public class LoanApplication {
+    @JsonProperty("customer")
     private Customer customer;
+    @JsonProperty("loanId")
     private int loanId;
+
+    @JsonProperty("amount")
     private double amount;
+    @JsonProperty("termInMonths")
     private int termInMonths;
+
+    @JsonProperty("startDate")
     private LocalDate startDate;
 
-    public LoanApplication(Customer customer, int loanId, double amount, int termInMonths, LocalDate startDate) {
+    public LoanApplication( @JsonProperty("customer")Customer customer,
+                            @JsonProperty("loanId")int loanId, @JsonProperty("amount")double amount,
+                            @JsonProperty("termInMonths")int termInMonths, @JsonProperty("startDate")LocalDate startDate) {
         this.customer = customer;
         this.loanId = loanId;
         this.amount = amount;

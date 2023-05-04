@@ -27,18 +27,18 @@ public class CustomerController {
 
     }
 
-    @PostMapping ("/customers")
+    @PostMapping ("/customer")
     public void createCustomer(@RequestBody Customer customer) {
          customerService.addCustomer(customer);
     }
 
-    @PutMapping("/customers/{id}")
-    public void updateCustomer(@RequestBody Customer customer) {
-         customerService.updateCustomer(customer);
+    @PutMapping("/customer/{id}")
+    public String updateCustomer(@RequestBody Customer customer) {
+        return customerService.updateCustomer(customer);
 
     }
 
-    @DeleteMapping ("/customers/{id}")
+    @DeleteMapping ("/customer/{id}")
     public void deleteCustomer(@PathVariable ("id") int id) {
         customerService.deleteCustomer(id);
 

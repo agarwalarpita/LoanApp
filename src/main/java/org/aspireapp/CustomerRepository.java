@@ -25,10 +25,15 @@ public class CustomerRepository {
         return new ArrayList<>(customers);
     }
 
-    public void updateCustomer(Customer customer) {
-        int index = customers.indexOf(customer);
-        if (index >= 0) {
-            customers.set(index, customer);
+    public String updateCustomer(Customer customer) {
+        Optional<Customer> currentCustomer = getCustomerById(customer.getId());
+        if(currentCustomer.isPresent()) {
+            customers.remove(currentCustomer.get());
+            customers.add(customer);
+            return "Customer Updated";
+        }
+        else {
+            return "Customer Id invalid";
         }
     }
 

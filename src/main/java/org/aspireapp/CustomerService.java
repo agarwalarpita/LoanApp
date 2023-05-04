@@ -25,8 +25,8 @@ public class CustomerService {
         customerRepository.addCustomer(customer);
     }
 
-    public void updateCustomer(Customer customer) {
-        customerRepository.updateCustomer(customer);
+    public String updateCustomer(Customer customer) {
+        return customerRepository.updateCustomer(customer);
     }
 
     public void deleteCustomer(int id)  {

@@ -31,8 +31,8 @@ public class LoanController {
     }
 
     @PostMapping("/loans")
-    public Loan createLoan(LoanApplication loanApplication) {
-        return loanService.createLoan(loanApplication);
+    public void createLoan(@RequestBody LoanApplication loanApplication) {
+         loanService.createLoan(loanApplication);
 
     }
 

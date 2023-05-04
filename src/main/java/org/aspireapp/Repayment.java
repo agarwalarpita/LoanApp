@@ -1,16 +1,20 @@
 package org.aspireapp;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 public class Repayment {
+    @JsonProperty("amount")
     private Double amount;
+    @JsonProperty("dueDate")
     private LocalDate dueDate;
-    private Loan loan;
+    @JsonProperty("status")
     private RepaymentStatus status;
 
-    public Repayment(Double amount, LocalDate dueDate, Loan loan) {
+    @JsonCreator
+    public Repayment(@JsonProperty("amount")Double amount, @JsonProperty("dueDate")LocalDate dueDate) {
         this.amount = amount;
         this.dueDate = dueDate;
-        this.loan = loan;
         this.status = RepaymentStatus.PENDING;
     }
 
@@ -22,8 +26,8 @@ public class Repayment {
         return dueDate;
     }
 
-    public Loan getLoan() {
-        return loan;
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
     }
 
     public RepaymentStatus getStatus() {

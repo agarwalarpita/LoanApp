@@ -14,11 +14,9 @@ public class Loan {
     private Customer customer;
 
     public Loan(LoanApplication loanApplication){
-        if(loanApplication.isValid())
-        {
-            new Loan(loanApplication.getAmount(), loanApplication.getTermInMonths(),
+        this(loanApplication.getAmount(), loanApplication.getTermInMonths(),
                     loanApplication.getStartDate(), loanApplication.getCustomer());
-        }
+
     }
     public Loan(Double amount, Integer term, LocalDate requestDate, Customer customer) {
         this.amount = amount;
@@ -32,9 +30,9 @@ public class Loan {
         Double weeklyPayment = amount / term;
         for (int i = 1; i <= term; i++) {
             if (i == term) {
-                repayments.add(new Repayment(amount - (weeklyPayment * (term - 1)), dueDate, this));
+                repayments.add(new Repayment(amount - (weeklyPayment * (term - 1)), dueDate));
             } else {
-                repayments.add(new Repayment(weeklyPayment, dueDate, this));
+                repayments.add(new Repayment(weeklyPayment, dueDate));
             }
             dueDate = dueDate.plusWeeks(1);
         }
