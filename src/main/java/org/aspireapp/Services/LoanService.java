@@ -12,7 +12,7 @@ import java.util.Optional;
 public class LoanService {
     private LoanRepository loanRepository ;
 
-    LoanService(LoanRepository loanRepository){
+    public LoanService(LoanRepository loanRepository){
         this.loanRepository = loanRepository;
     }
     public Loan createLoan(LoanApplication loanApplication) {
