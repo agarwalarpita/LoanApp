@@ -1,8 +1,14 @@
-package org.aspireapp;
+package org.aspireapp.Controllers;
 
-import java.net.URI;
 import java.util.List;
 
+import org.aspireapp.Pojos.Loan;
+import org.aspireapp.Pojos.LoanApplication;
+import org.aspireapp.Pojos.Repayment;
+import org.aspireapp.Db.CustomerRepository;
+import org.aspireapp.Db.LoanRepository;
+import org.aspireapp.Services.CustomerService;
+import org.aspireapp.Services.LoanService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,7 +49,7 @@ public class LoanController {
 
     @PostMapping("/loans/{loanId}/repayments/{amount}/{customerId}")
     public Repayment createRepayment(@PathVariable("loanId") int loanId, @PathVariable("amount") double amount,
-                                    @PathVariable("customerId") int customerId) {
+                                     @PathVariable("customerId") int customerId) {
         return loanService.addRepayment(loanId, amount, customerId);
 
     }

@@ -1,5 +1,8 @@
-package org.aspireapp;
+package org.aspireapp.Controllers;
 
+import org.aspireapp.Pojos.Customer;
+import org.aspireapp.Db.CustomerRepository;
+import org.aspireapp.Services.CustomerService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

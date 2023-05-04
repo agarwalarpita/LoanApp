@@ -1,8 +1,10 @@
-package org.aspireapp;
+package org.aspireapp.Pojos;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.aspireapp.Util.RepaymentStatus;
+
 public class Repayment {
     @JsonProperty("amount")
     private Double amount;

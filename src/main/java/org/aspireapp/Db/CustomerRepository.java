@@ -1,4 +1,6 @@
-package org.aspireapp;
+package org.aspireapp.Db;
+
+import org.aspireapp.Pojos.Customer;
 
 import java.util.ArrayList;
 import java.util.List;

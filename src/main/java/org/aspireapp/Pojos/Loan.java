@@ -1,4 +1,6 @@
-package org.aspireapp;
+package org.aspireapp.Pojos;
+
+import org.aspireapp.Util.LoanStatus;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

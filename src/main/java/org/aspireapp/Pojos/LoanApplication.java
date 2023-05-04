@@ -1,8 +1,9 @@
-package org.aspireapp;
+package org.aspireapp.Pojos;
 
 import java.time.LocalDate;
-import com.fasterxml.jackson.annotation.JsonCreator;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class LoanApplication {
     @JsonProperty("customer")
     private Customer customer;

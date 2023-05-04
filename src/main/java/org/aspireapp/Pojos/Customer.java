@@ -1,4 +1,4 @@
-package org.aspireapp;
+package org.aspireapp.Pojos;
 
 import java.util.Objects;
 

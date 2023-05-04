@@ -1,4 +1,4 @@
-package org.aspireapp;
+package org.aspireapp.Util;
 
 public enum LoanStatus {
     PAID,

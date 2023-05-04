@@ -1,6 +1,11 @@
-package org.aspireapp;
-import java.time.LocalDate;
-import java.util.ArrayList;
+package org.aspireapp.Services;
+import org.aspireapp.Pojos.Loan;
+import org.aspireapp.Pojos.LoanApplication;
+import org.aspireapp.Pojos.Repayment;
+import org.aspireapp.Db.LoanRepository;
+import org.aspireapp.Util.LoanStatus;
+import org.aspireapp.Util.RepaymentStatus;
+
 import java.util.List;
 import java.util.Optional;
 
