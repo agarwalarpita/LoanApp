@@ -16,11 +16,12 @@ public class Loan {
     private Customer customer;
 
     public Loan(LoanApplication loanApplication){
-        this(loanApplication.getAmount(), loanApplication.getTermInMonths(),
+        this(loanApplication.getLoanId(), loanApplication.getAmount(), loanApplication.getTermInMonths(),
                     loanApplication.getStartDate(), loanApplication.getCustomer());
 
     }
-    public Loan(Double amount, Integer term, LocalDate requestDate, Customer customer) {
+    public Loan(int id,Double amount, Integer term, LocalDate requestDate, Customer customer) {
+        this.id=id;
         this.amount = amount;
         this.term = term;
         this.requestDate = requestDate;
