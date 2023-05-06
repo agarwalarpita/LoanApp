@@ -1,5 +1,6 @@
 package org.aspireapp.Pojos;
 import java.time.LocalDate;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -41,6 +42,21 @@ public class Repayment {
     }
     public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Repayment repayment = (Repayment) o;
+        return Objects.equals(amount, repayment.amount) &&
+                Objects.equals(status, repayment.status) &&
+                Objects.equals(dueDate, repayment.dueDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(amount, status, dueDate);
     }
 }
 
